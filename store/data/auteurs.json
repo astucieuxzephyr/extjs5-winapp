@@ -1,0 +1,16 @@
+{
+  "data": [
+    {
+      "nom":"Dumas",
+      "prenom":"Alexandre"
+    },
+    {
+      "nom":"Freud",
+      "prenom":"Sigmund"
+    },
+    {
+      "nom":"Lacan",
+      "prenom":"Jacques"
+    }
+  ]
+}

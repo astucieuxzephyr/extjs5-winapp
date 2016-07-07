@@ -59,6 +59,38 @@ var panelFlotting = Ext.create('Ext.panel.Panel', {
 panelFlotting.show();
 */
 
+// Définition d'une nouvelle widget
+// On pourra ensuite appeler cette widget avec xtype: 'grilleauteurs'
+Ext.define('GrilleAuteurs', {
+   extend: 'Ext.grid.Panel',
+   alias: 'widget.grilleauteurs',
+   // TODO
+  // store: Ext.data.StoreManager.lookup('sampleStore'),
+   store: Ext.data.StoreManager.lookup('auteur'), //
+   // ceci crée une erreur
+   store: 'auteur',
+   selType: 'checkboxmodel',
+   selModel: {
+       checkOnly: true,
+       injectCheckbox: 1
+   },
+   columns: [{
+      text: 'Nom de famille',
+      width: 200,
+      sortable: true,
+      hideable: false,
+      dataIndex: 'nom'
+   },{
+       text: 'Prénom',
+       width: 150,
+       sortable: true,
+       hideable: true,
+       dataIndex: 'prenom'
+   }],
+   height: 200,
+   width: 450
+});
+
  Ext.define('WinApp.view.main.Main', {
      extend: 'Ext.container.Container',
      requires: [
@@ -142,13 +174,22 @@ panelFlotting.show();
                 html: '<h2>Content.</h2>',
                 listeners: {
                     render: function() {
-                        Ext.MessageBox.alert('Rendered Livres', 'Tab Livres was rendered.');
+                        console.log('Tab Livres was rendered.');
+                        // Ext.MessageBox.alert('Rendered Livres', 'Tab Livres was rendered.');
                     }
                 }
             },
             {
                 title: 'Auteurs',
-                html: '<h2>Auteurs.</h2>'
+                // html: '<h2>Auteurs.</h2>'
+                // xtype: 'grid' : means "create standard Ext.grid.Panel and add it here"
+                xtype: 'grilleauteurs',
+                listeners: {
+                    render: function() {
+                        console.log('Tab Auteurs was rendered.');
+                        //Ext.MessageBox.alert('Rendered Auteurs', 'Tab Auteurs was rendered.');
+                    }
+                }
             },
             {
                 title: 'Concepts',

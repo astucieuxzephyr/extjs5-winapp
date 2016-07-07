@@ -5,7 +5,7 @@ Ext.define('WinApp.view.auteur.AuteurModel', {
         name: 'WinApp',
         nom: '',
         prenom:''
-    }
+    },
 
     formulas: {
         // We'll explain formulas in more detail soon.

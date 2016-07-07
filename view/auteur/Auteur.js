@@ -17,18 +17,25 @@ Ext.define('WinApp.view.auteur.Auteur',{
     },
 
     defaultType: 'textfield',
+
     items: [{
         fieldLabel: 'Prénom',
         bind: '{prenom}'
-    },{
+      },{
         fieldLabel: 'Nom',
         bind: '{nom}'
-    },{
+      },{
         xtype: 'button',
         text: 'Enregistrer',
+        // handler: function(){},
         bind: {
             hidden: '{!nom}'
         }
-    }]
+      }],
+
+    initComponent: function() {
+      console.log('Init View auteur/Auteur');
+      // this.callParent(arguments);
+    }
 
 });

@@ -63,9 +63,12 @@ Ext.define('WinApp.view.login.Login', {
               allowBlank : true,
               fieldLabel: 'Serveur',
 
+              // TODO
               // store: server, // CECI NE MARCHE PAS
               // CI DESSOUS : bonne méthode ?
               store: Ext.create('WinApp.store.Server'),
+              // METHODE qui génère une erreur : Cannot modify ext-empty-store
+              // store: Ext.data.StoreManager.lookup('server'),
 
               // queryMode: 'local'
               displayField: 'name',
