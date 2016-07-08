@@ -17,9 +17,9 @@
 Ext.define('WinApp.view.main.MainController', {
     extend: 'Ext.app.ViewController',
 
-//    requires: [
-//        'Ext.window.MessageBox'
-//    ],
+    // requires: [
+      //  'Ext.window.MessageBox'
+    // ],
 
     alias: 'controller.main',
 

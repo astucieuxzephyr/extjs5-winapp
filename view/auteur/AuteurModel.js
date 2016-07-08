@@ -1,7 +1,11 @@
+//
 Ext.define('WinApp.view.auteur.AuteurModel', {
     extend: 'Ext.app.ViewModel',
+
     alias: 'viewmodel.auteur',
+
     data: {
+        // rec: null,
         name: 'WinApp',
         nom: '',
         prenom:''

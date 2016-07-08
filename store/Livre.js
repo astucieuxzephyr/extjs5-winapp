@@ -5,8 +5,10 @@
 Ext.define('WinApp.store.Livre', {
 
   extend : 'Ext.data.Store',
-  requires:['WinApp.view.livre.Livre'],
-  model: 'WinApp.view.livre.Livre',
+
+  requires:['WinApp.model.Livre'],
+  model: 'WinApp.model.Livre',
+
   storeId : 'livre',
   //  le proxy est la manière dont les données circulent : JSON, REST, ...
   proxy: {
@@ -17,5 +19,9 @@ Ext.define('WinApp.store.Livre', {
       type: 'json',
       rootProperty: 'data'
     }
+  },
+  initComponent: function() {
+    console.log('Init Livre Store');
+    // this.callParent(arguments);
   }
 });

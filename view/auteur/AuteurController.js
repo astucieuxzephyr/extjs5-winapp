@@ -10,6 +10,7 @@ Ext.define('WinApp.view.auteur.AuteurController', {
       selector:'grid'
     ],
 */
+/*
     models: [
       'Auteur'
     ],
@@ -19,9 +20,9 @@ Ext.define('WinApp.view.auteur.AuteurController', {
     views: [
       'Auteur'
     ],
-
+*/
     init: function() {
-      console.log('Initialisation AuteurController');
+      console.log('Init AuteurController');
       this.control({
         'button': { click: this.refreshGrid }
       });

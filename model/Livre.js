@@ -1,21 +1,18 @@
-Ext.define('WinApp.model.Auteur', {
-    extend: 'Ext.data.Model'
+Ext.define('WinApp.model.Livre', {
+    extend: 'Ext.data.Model',
 
-    ,idProperty:'auteurid' // must be present
-
-
-    ,fields: [
-        // idProperty field must be present
-        { name: 'auteurid', type: 'int' },
-        { name: 'nom', type: 'string' },
-        { name: 'prenom', type: 'string' }
-
+    fields: [
+        { name: 'id', type: 'int' },
+        { name: 'titre', type: 'string' },
+        { name: 'soustitre', type: 'string' }
+      //  ,
+      //  { name: 'auteur', type: 'auteur' }
     ],
 
     initComponent: function() {
-      console.log('Init Auteur Model');
+      console.log('Init Livre Model');
       // this.callParent(arguments);
-    },
+    }
 
     // belongsTo / hasMany / associations
 
@@ -23,27 +20,21 @@ Ext.define('WinApp.model.Auteur', {
     // Chargement et sauvegarde des données
     proxy: {     // Ext.util.ObjectTemplate
         type: 'ajax',
-        // URLs for CRUD operations
         api: {
-          // on définit le chemin souhaité
-          read: 'resources/auteur/get',
-          update: 'resources/auteur/update'
-          // read: 'data/get_user',
-          // update: 'data/update_user'
+        // on définit le chemin souhaité
+        read: 'resources/livre/get',
+        update: 'resources/livre/update'
         },
         // http methods to use
         actionMethods:{
           read: 'POST',
           update: 'POST'
         },
-
-
         reader: {
             type: 'json',
             // racine de l'élément qui contient les données dans le JSON !!
             root: 'data'
         },
-
         writer: {
             type: 'json',
             allowSingle: false,

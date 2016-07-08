@@ -19,6 +19,11 @@
 
   // Cet affichage apparaitra seulement UNE FOIS
   Ext.Msg.alert('(Main.js)', 'Welcome to you !');
+  console.log('main/Main.js...');
+
+
+
+
 //  var leftPanel = Ext.create('Ext.panel.Panel', );
 
 /*
@@ -65,15 +70,28 @@ Ext.define('GrilleAuteurs', {
    extend: 'Ext.grid.Panel',
    alias: 'widget.grilleauteurs',
    // TODO
+   // la methode lookup ne peut etre utilisée que si le store a été chargé en mémoire !
   // store: Ext.data.StoreManager.lookup('sampleStore'),
-   store: Ext.data.StoreManager.lookup('auteur'), //
-   // ceci crée une erreur
-   store: 'auteur',
-   selType: 'checkboxmodel',
+   // store: Ext.data.StoreManager.lookup('auteur'), //
+   // Ext.create('MyApp.store.SomeStore',{  ... }),
+   // OR add the store to stores:[] array in Application.js
+   requires:[
+     'WinApp.store.Auteur'
+   ],
+   // Si le magasin n'est pas indiqué dans le requires, on aura une erreur
+   // Cannot read property 'isBufferedStore' of undefined
+
+   // Lors du lancement de ce code le magasin peut ne pas etre créé : ça marche.
+   store: 'Auteur',
+   // donc NE PAS FAIRE :
+   // store: Ext.create('WinApp.store.Auteur'),
+
+   // CASE A COCHER supplementaire
+/*   selType: 'checkboxmodel',
    selModel: {
        checkOnly: true,
        injectCheckbox: 1
-   },
+   },*/
    columns: [{
       text: 'Nom de famille',
       width: 200,
@@ -88,8 +106,14 @@ Ext.define('GrilleAuteurs', {
        dataIndex: 'prenom'
    }],
    height: 200,
-   width: 450
+   width: 450,
+   initComponent: function() {
+     console.log('Main : Classe GrilleAuteurs definie');
+     // this.callParent(arguments);
+   }
 });
+
+
 
  Ext.define('WinApp.view.main.Main', {
      extend: 'Ext.container.Container',
@@ -182,22 +206,84 @@ Ext.define('GrilleAuteurs', {
             {
                 title: 'Auteurs',
                 // html: '<h2>Auteurs.</h2>'
-                // xtype: 'grid' : means "create standard Ext.grid.Panel and add it here"
-                xtype: 'grilleauteurs',
+                xtype: 'panel',
+                frame: true,
+                items:[
+                  {
+                    title:'ttt',
+                    html:'info bidon'
+                  }
+/*
+                  ,
+                  {
+                    // FRAME GAUCHE : GRILLE
+                    // xtype: 'grid' : means "create standard Ext.grid.Panel and add it here"
+                    // ici l'approche est directe parce qu'il s'gait d'une widget : on n'utilise pas la reference
+                    xtype: 'grilleauteurs',
+                    listeners: {
+                        render: function() {
+                            console.log('Grille Auteurs was rendered.');
+                        }
+                    }
+                  }
+                  ,
+                  {
+                    // FRAME DROITE : Panneau Detail
+                    requires:['auteurdetailform'],
+                    frame: true,
+                    // xtype: 'form', // implique d'avoir un widget
+                    listeners: {
+                        render: function() {
+                            console.log('FORM Auteurs was rendered.');
+                            //Ext.MessageBox.alert('Rendered Auteurs', 'Tab Auteurs was rendered.');
+                        }
+                    }
+                  }*/
+                ],
                 listeners: {
                     render: function() {
                         console.log('Tab Auteurs was rendered.');
-                        //Ext.MessageBox.alert('Rendered Auteurs', 'Tab Auteurs was rendered.');
                     }
                 }
             },
             {
                 title: 'Concepts',
-                html: '<h2>Concepts.</h2>'
+                xtype: 'tabpanel',
+                items:[
+                  {
+                    title: 'Tab 1',
+                    html: '<h2>Concepts Tab1.</h2>'
+                  },
+                  {
+                    title: 'Tab 2',
+                    html: '<h2>Concepts Tab2.</h2>'
+                  }],
+                listeners: {
+                    render: function() {
+                        console.log('Tab Concepts was rendered.');
+                    }
+                }
+            },
+            {
+                title: 'Donnees',
+                html: '<h2>Donnees.</h2>',
+
+                xtype: 'visudonneesform', // references view/FormVisuDonnees
+
+                listeners: {
+                    render: function() {
+                        console.log('Tab Donnees was rendered.');
+                    }
+                }
             },
             {
                 title: 'Aide',
-                html: '<h2>Aide.</h2>'
+                html: '<h2>Aide.</h2>',
+              listeners: {
+                  render: function() {
+                      console.log('Tab Aide was rendered.');
+                  }
+              }
             },
             {
                 title: 'Todo',

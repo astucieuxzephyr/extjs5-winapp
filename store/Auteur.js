@@ -5,9 +5,11 @@
 Ext.define('WinApp.store.Auteur', {
 
   extend : 'Ext.data.Store',
-  requires:['WinApp.view.auteur.Auteur'],
-  model: 'WinApp.view.auteur.Auteur',
-  storeId : 'auteur',
+
+  requires:['WinApp.model.Auteur'],
+  model: 'WinApp.model.Auteur',
+
+  storeId : 'Auteur',
 
   initComponent: function(){
     console.log('Init Auteur Store');

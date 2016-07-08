@@ -8,16 +8,28 @@ Ext.define('WinApp.view.livre.Livre',{
     ],
 
     controller: 'livre',
-
     viewModel: {
         type: 'livre'
     },
 
-    fields: [
-        { name: 'name', type: 'string' },
-        { name: 'titre', type: 'string' },
-        { name: 'soustitre', type: 'string' },
-        { name: 'auteur', type: 'string' }
+
+    defaultType: 'textfield',
+
+    items: [{
+        fieldLabel: 'Titre',
+        bind: '{titre}'
+      },{
+        fieldLabel: 'Sous-titre',
+        bind: '{soustitre}'
+      },{
+        xtype: 'button',
+        text: 'Enregistrer'
+        // ,
+        // handler: function(){},
+        // bind: {
+        //    hidden: '{!titre}'
+        // }
+      }
     ],
 
     html: 'LIVRE'

@@ -18,5 +18,9 @@ Ext.define('WinApp.store.Server', {
       type: 'json',
       rootProperty: 'data'
     }
+  },
+  initComponent: function() {
+    console.log('Init Server Store');
+    // this.callParent(arguments);
   }
 });

@@ -27,7 +27,11 @@ Ext.define('WinApp.view.auteur.Auteur',{
       },{
         xtype: 'button',
         text: 'Enregistrer',
+
+        // Fonction qui va gérer le traitement lors du clic sur le bouton
         // handler: function(){},
+
+        // Mettre en hidden ce qui est different de nom
         bind: {
             hidden: '{!nom}'
         }
