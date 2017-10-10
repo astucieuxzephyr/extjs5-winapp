@@ -10,8 +10,12 @@ Si on utilise un dossier global nommé sencha, on aura par exemple :
     sencha/my-app     <=== l'application générée via la commande `sencha -sdk ext5/ generate app MyApp my-app`
     sencha/my-app/app/ <=== Dans ce dossier on aura les fichiers situés sur ce dépôt.
 
-## Installation
-* Le dossier avec la librairie ext5 est nécessaire, évidemment !!
+## Installation de ExtJS
+* Installer la Sencha CLI
+* Placer le dossier du SDK EXT JS 5 dans etc/www/sencha
+
+## Installation de cette application
+* Le dossier avec le SDK EXT JS 5 est nécessaire, évidemment... (voir ci-dessus)
 * On commence par générer une application VIDE my-app : `sencha -sdk ext5/ generate app MyApp my-app`
 * Se placer dans le dossier de votre application : `cd my-app`
 * Récupérer les sources à partir de GitHub et les mettre dans le dossier app : `git clone https://github.com/astucieuxzephyr/extjs5-winapp.git app`
