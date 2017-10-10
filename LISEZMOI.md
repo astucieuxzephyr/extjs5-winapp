@@ -5,30 +5,20 @@
 
 ## Lancement du serveur
 
-* Faire
-    sencha web start
-
-* Puis, dans le navigateur, allez à l'adresse : localhost:1841
+* Faire : `sencha web start`
+* Puis, dans le navigateur, allez à l'adresse : `localhost:1841`
 
 ## Développement : 
 
-* Lancement du watch (rebuild automatique en cours de développement)
-
-    sencha app watch
-
-
-* Pour générer une entité (avec Model, Controller et ViewModel), faire :
-
-    sencha generate view livre.Livre
+* Lancement du watch (rebuild automatique en cours de développement) : `sencha app watch`
+* Pour générer une entité (avec Model, Controller et ViewModel), faire : `sencha generate view livre.Livre`
 
 CE QUI VA GENERER TROIS FICHIERS (Model, Controller et ViewModel) DANS un sous dossier livre :
 - livre/Livre.js           : Vue ()
 - livre/livreController.js : Contrôleur
 - livre/LivreModel.js      : Modèle de données
 
-OU BIEN :
-
-    sencha generate model Server name:string
+OU BIEN `sencha generate model Server name:string`
 
 
 -----------------------------------
