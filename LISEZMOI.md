@@ -26,23 +26,24 @@ OU BIEN `sencha generate model Server name:string`
 voir : https://blogs.walkingtree.in/2013/04/09/create-build-sencha-extjs-project-using-sencha-cmd-3/
 
 
-
+-----------------------------------
 ## Rappels :
+
+### Syntaxe :
 * En Js, NE PAS METTRE DE VIRGULE après la dernnière occurence d'une listeners
 Sinon un warning apparaît dans la watch
 
-* ViewModel = une classe qui gère les données spécifiques à une vue.
------------------------------------
-Vues : Grilles, Arbres, Panneaux
+### Vues : Grilles, Arbres, Panneaux
+* TO DO !!
 
+### Structure de l'application :
 
-## Structure de l'application :
-Ext.Component
-    - View { viewModel : nomDuViewModel }  (ViewModel = une classe qui gère les données spécifiques à une vue.)
-          - composant X { bind: }
-          - composant Y { bind: }
-          - evenement A
-          - evenement B
+    Ext.Component
+        - View { viewModel : nomDuViewModel }  (ViewModel = une classe qui gère les données spécifiques à une vue.)
+              - composant X { bind: }
+              - composant Y { bind: }
+              - evenement A
+              - evenement B
 
 Etant donné que chaque composant peut vouloir interagir avec les données
 On inclut des clés bind aux composants qui présentent ou éditent ces données
