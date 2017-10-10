@@ -12,7 +12,7 @@ Si on utilise un dossier global nommé sencha, on aura par exemple :
 
 ## Installation
 * Le dossier avec la librairie ext5 est nécessaire, évidemment !!
-* On commence par générer une application my-app : `sencha -sdk ext5/ generate app MyApp my-app`
+* On commence par générer une application VIDE my-app : `sencha -sdk ext5/ generate app MyApp my-app`
 * Se placer dans le dossier de votre application : `cd my-app`
 * Récupérer les sources à partir de GitHub et les mettre dans le dossier app : `git clone https://github.com/astucieuxzephyr/extjs5-winapp.git app`
 
