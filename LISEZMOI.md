@@ -1,23 +1,28 @@
 
-## Application avec ExtJS
+## Application avec ExtJS (5.1.2)
 
 Pour l'installation, il suffit de créer une application vide,
-puis de placer l'ensemble des fichiers dans le dossier app
+puis de placer l'ensemble des fichiers (Situés dans ce github) dans le dossier app
 
 Si on utilise un dossier global nommé sencha, on aura par exemple :
 
-sencha/ext5       <=== le vendor
-sencha/my-app     <=== l'application générée via la commande `sencha -sdk ext5/ generate app MyApp my-app`
-secha/my-app/app/ <=== Dans ce dossier on aura les fichiers situés sur ce dépôt.
+    sencha/ext5       <=== le vendor
+    sencha/my-app     <=== l'application générée via la commande `sencha -sdk ext5/ generate app MyApp my-app`
+    sencha/my-app/app/ <=== Dans ce dossier on aura les fichiers situés sur ce dépôt.
 
-## Quelques rappels sur ExtJs (5.1.2)
+## Installation
+* Le dossier avec la librairie ext5 est nécessaire, évidemment !!
+* On commence par générer une application my-app : `sencha -sdk ext5/ generate app MyApp my-app`
+* Se placer dans le dossier de votre application : `cd my-app`
+* Récupérer les sources à partir de GitHub et les mettre dans le dossier app : `git clone https://github.com/astucieuxzephyr/extjs5-winapp.git app`
 
 ## Lancement du serveur
 * Se placer dans le dossier de votre application : `cd my-app`
 * Faire : `sencha web start`
 * Puis, dans le navigateur, allez à l'adresse : `localhost:1841`
 
-## Développement : 
+
+## Quelques rappels sur ExtJs :
 
 ### Ordre de développement d'une application :
 1 - Décrire Le(s) layouts et les components 
@@ -26,7 +31,7 @@ secha/my-app/app/ <=== Dans ce dossier on aura les fichiers situés sur ce dép�
 4 - Définir les liens (bindings) pour les structures (Models) 
 5 - Définir les comportements pour les Components et les Modèles.
 
-
+## Développement : 
 * Lancement du watch (rebuild automatique en cours de développement) : `sencha app watch`
 * Pour générer une entité (avec Model, Controller et ViewModel), faire : `sencha generate view livre.Livre`
 
